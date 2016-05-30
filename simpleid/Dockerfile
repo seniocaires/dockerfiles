@@ -35,3 +35,6 @@ RUN mv simpleid/identities/* /var/simpleid/identities
 RUN mv simpleid/cache /var/simpleid/cache
 RUN mv simpleid/store /var/simpleid/store
 RUN mv simpleid/www/* /var/www/simpleid
+
+# init services
+RUN service apache2 start
