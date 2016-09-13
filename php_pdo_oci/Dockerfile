@@ -74,6 +74,7 @@ RUN mkdir /tmp/oci8
 RUN cp $PATH_TMP_INSTALL/pacotes/oci8-2.0.11.zip /tmp/oci8/oci8-2.0.11.zip
 RUN cd /tmp/oci8/ && unzip oci8-2.0.11.zip
 RUN cd /tmp/oci8/oci8-2.0.11 && phpize && /tmp/oci8/oci8-2.0.11/./configure --with-oci8=instantclient,/opt/oracle/instantclient
+RUN cd /tmp/oci8/oci8-2.0.11 && make && make install
 #RUN pecl install oci8-2.0.11 #	instantclient,/opt/oracle/instantclient
 RUN cp $PATH_TMP_INSTALL/config/oci8.ini /etc/php5/mods-available/oci8.ini
 RUN php5enmod oci8
